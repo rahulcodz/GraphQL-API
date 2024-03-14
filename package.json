@@ -1,0 +1,74 @@
+{
+    "name": "graphql-server",
+    "version": "1.0.0",
+    "main": "index.js",
+    "author": "Alex Alonso <alex4551@gmail.com>",
+    "license": "MIT",
+    "scripts": {
+        "nsp": "nsp check",
+        "tsc": "tsc -p tsconfig.json",
+        "test": "jest",
+        "test:coverage": "del-cli coverage && jest --coverage",
+        "test:coveralls": "yarn test:coverage && cat ./coverage/lcov.info | coveralls",
+        "test:showCoverage": "yarn test:coverage && open coverage/lcov-report/index.html",
+        "test:watch": "jest --watch",
+        "start": "nodemon --config nodemon.json",
+        "tslint": "tslint -c tslint.json 'src/**/*.ts' 'test/*.ts'",
+        "format:check": "prettier --check .",
+        "format:write": "prettier --write .",
+        "lint:check": "eslint .",
+        "lint:fix": "eslint --fix ."
+    },
+    "devDependencies": {
+        "@types/body-parser": "^1.16.4",
+        "@types/compression": "^0.0.36",
+        "@types/cors": "^2.8.3",
+        "@types/dotenv": "^6.1.0",
+        "@types/graphql": "^0.13.4",
+        "@types/helmet": "^0.0.42",
+        "@types/jest": "^23.3.9",
+        "@types/supertest": "^2.0.6",
+        "@typescript-eslint/eslint-plugin": "^7.2.0",
+        "@typescript-eslint/parser": "^7.2.0",
+        "coveralls": "^3.0.0",
+        "del-cli": "^1.1.0",
+        "dotenv": "^6.1.0",
+        "eslint": "^8.57.0",
+        "eslint-config-prettier": "^9.1.0",
+        "jest": "^23.6.0",
+        "nodemon": "^1.18.5",
+        "nsp": "^3.1.0",
+        "prettier": "^3.2.5",
+        "supertest": "^3.3.0",
+        "ts-jest": "^23.10.4",
+        "ts-node": "^7.0.1",
+        "tslint": "^5.11.0",
+        "typescript": "^3.1.6"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/FinalDes/apollo-express-ts-server-boilerplate.git"
+    },
+    "dependencies": {
+        "apollo-link": "^ 1.2.3",
+        "body-parser": "^1.17.2",
+        "compression": "^1.7.3",
+        "cors": "^2.8.5",
+        "express": "^4.16.4",
+        "graphql": "^0.13.2",
+        "graphql-server-express": "^1.4.0",
+        "graphql-tools": "^4.0.3",
+        "helmet": "^3.14.0"
+    },
+    "jest": {
+        "transform": {
+            ".(ts|tsx)": "<rootDir>/node_modules/ts-jest/preprocessor.js"
+        },
+        "testRegex": "(tests/.*|\\.(test|spec))\\.ts$",
+        "moduleFileExtensions": [
+            "ts",
+            "js",
+            "json"
+        ]
+    }
+}

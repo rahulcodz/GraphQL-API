@@ -1,10 +1,10 @@
-import bodyParser = require('body-parser');
-import compression = require('compression');
-import cors = require('cors');
-import dotenv = require('dotenv');
-import express = require('express');
+import bodyParser from 'body-parser';
+import compression from 'compression';
+import cors from 'cors';
+import dotenv from 'dotenv';
+import express from 'express';
 import { graphiqlExpress, graphqlExpress } from 'graphql-server-express';
-import helmet = require('helmet');
+import helmet from 'helmet';
 
 import { welcomeQuery } from './graphiQL_welcome_query';
 import { schema } from './schema';
@@ -28,7 +28,7 @@ const helperMiddleware: express.RequestHandler[] = [
 ];
 app.use(helmet());
 app.use(compression());
-app.use('/api', (req: any, res: any, next: any) => {
+app.use('/api', (req: express.Request, res: express.Response, next: any) => {
     res.status(200).json('hello from api');
     next();
 });
